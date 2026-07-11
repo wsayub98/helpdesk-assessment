@@ -12,14 +12,14 @@ Unit tests for deduplication logic written in file: tests\Unit\TransactionImport
 
 # Section 3
 ### SaaS Multi-Tenant Architecture
-                Laravel SaaS Application
-                           |
-          +----------------+----------------+
+                   Laravel SaaS Application
+                               |
+            +----------------+----------------+
+            |                                 |
+        Shared Database                 Dedicated Database
+        (Small/Medium Tenants)        (Premium Enterprise)
           |                                 |
-   Shared Database                 Dedicated Database
- (Small/Medium Tenants)        (Premium Enterprise)
-          |                                 |
-    Tenant A, B, C                     Large Client
+        Tenant A, B, C                     Large Client
 ### Database Strategy
 I would choose a Hybrid database strategy.
 - Small and medium tenants share one database using a tenant_id column.
