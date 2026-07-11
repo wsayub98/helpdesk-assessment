@@ -15,3 +15,8 @@ php artisan serve
 email: test@example.local
 password: H3lpd3sk
 ```
+
+![alt text](Screenshots/image-3.png)
+![alt text](Screenshots/image.png)
+![alt text](Screenshots/image-1.png)
+![alt text](Screenshots/image-2.png)
