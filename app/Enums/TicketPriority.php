@@ -1,0 +1,28 @@
+<?php
+
+namespace App\Enums;
+
+enum TicketPriority: string
+{
+    case Low = 'low';
+    case Medium = 'medium';
+    case High = 'high';
+
+    public static function fromValue(int $value): self
+    {
+        return match ($value) {
+            0 => self::Low,
+            1 => self::Medium,
+            2 => self::High,
+        };
+    }
+
+    public function label(): string
+    {
+        return match ($this) {
+            self::Low => 'Low',
+            self::Medium => 'Medium',
+            self::High => 'High',
+        };
+    }
+}

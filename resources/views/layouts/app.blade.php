@@ -32,5 +32,21 @@
                 {{ $slot }}
             </main>
         </div>
+        <x-toast />
+        <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        @if (session()->has('success'))
+            window.dispatchEvent(new CustomEvent('notify', { 
+                detail: { message: "{{ session('success') }}", type: 'success' } 
+            }));
+        @endif
+
+        @if (session()->has('error'))
+            window.dispatchEvent(new CustomEvent('notify', { 
+                detail: { message: "{{ session('error') }}", type: 'error' } 
+            }));
+        @endif
+    });
+</script>
     </body>
 </html>
